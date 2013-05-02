@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.sun.jersey:jersey-bundle:1.17.1'
+  testCompile 'junit:junit:4.11'
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.5'
+}

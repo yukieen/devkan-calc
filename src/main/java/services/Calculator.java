@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/")
+@Path("/calc")
 @Produces(MediaType.TEXT_PLAIN)
 public class Calculator {
 

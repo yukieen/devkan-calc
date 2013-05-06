@@ -12,7 +12,7 @@
                $.ajax({
                   type: "GET",
                   cache: false,
-                  url: "./calc/"+$("#op").val(),
+                  url: "./services/calc/"+$("#op").val(),
                   data: { a: $("#x1").val(), b: $("#x2").val() },
                   success: function( data ) {
                      $("#result").html("<strong>" + data + "</strong>");

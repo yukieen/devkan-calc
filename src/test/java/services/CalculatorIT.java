@@ -12,7 +12,7 @@ public class CalculatorIT extends JerseyTest {
 
     @Test
     public void testAdd() {
-        String actual = resource().path("/add")
+        String actual = resource().path("/calc/add")
                 .queryParam("a", "1")
                 .queryParam("b", "1")
                 .get(String.class);

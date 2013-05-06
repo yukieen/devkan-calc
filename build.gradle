@@ -25,3 +25,12 @@ targetCompatibility = 1.7
 task wrapper(type: Wrapper) {
   gradleVersion = '1.5'
 }
+
+test {
+  exclude '**/*IT*'
+}
+
+task integrationTest(type:Test) {
+  include '**/*IT*'
+  testReportDir = new File(project.testReportDir.parent, 'integration-tests')
+}

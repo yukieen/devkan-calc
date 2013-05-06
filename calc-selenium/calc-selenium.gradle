@@ -1,0 +1,4 @@
+dependencies {
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.seleniumhq.selenium:selenium-java:2.32.0'
+}

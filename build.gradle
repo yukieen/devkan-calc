@@ -1,36 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'jetty'
-
-archivesBaseName = 'devkan-calc'
-
-repositories {
-  mavenCentral()
-}
-
-ext {
-  JERSEY_VERSION = '1.17.1'
-}
-
-dependencies {
-  providedCompile "com.sun.jersey:jersey-bundle:$JERSEY_VERSION"
-  providedCompile 'asm:asm:3.1'
-  testCompile 'junit:junit:4.11'
-  testCompile "com.sun.jersey.jersey-test-framework:jersey-test-framework-core:$JERSEY_VERSION"
-  testCompile "com.sun.jersey.jersey-test-framework:jersey-test-framework-http:$JERSEY_VERSION"
-}
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+apply plugin: 'base'
 
 task wrapper(type: Wrapper) {
   gradleVersion = '1.5'
 }
 
-test {
-  exclude '**/*IT*'
-}
+subprojects {
+  apply plugin: 'java'
+  
+  sourceCompatibility = 1.7
+  targetCompatibility = 1.7
 
-task integrationTest(type:Test) {
-  include '**/*IT*'
-  testReportDir = new File(project.testReportDir.parent, 'integration-tests')
+  repositories {
+    mavenCentral()
+  }
 }

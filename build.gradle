@@ -5,10 +5,16 @@ repositories {
   mavenCentral()
 }
 
+ext {
+  JERSEY_VERSION = '1.17.1'
+}
+
 dependencies {
-  providedCompile 'com.sun.jersey:jersey-bundle:1.17.1'
+  providedCompile "com.sun.jersey:jersey-bundle:$JERSEY_VERSION"
   providedCompile 'asm:asm:3.1'
   testCompile 'junit:junit:4.11'
+  testCompile "com.sun.jersey.jersey-test-framework:jersey-test-framework-core:$JERSEY_VERSION"
+  testCompile "com.sun.jersey.jersey-test-framework:jersey-test-framework-http:$JERSEY_VERSION"
 }
 
 sourceCompatibility = 1.7

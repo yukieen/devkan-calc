@@ -2,6 +2,11 @@ apply plugin: 'jetty'
 
 archivesBaseName = 'devkan-calc'
 
+httpPort = 8080
+stopPort = 9451
+stopKey = 'foo'
+jettyRun.daemon = true
+
 ext {
   JERSEY_VERSION = '1.17.1'
 }

@@ -2,3 +2,8 @@ dependencies {
     testCompile 'junit:junit:4.11'
     testCompile 'org.seleniumhq.selenium:selenium-java:2.32.0'
 }
+
+task localTest(type:Test, dependsOn:':calc-app:jettyRun') {
+
+  project(':calc-app').jettyStop.execute()
+}

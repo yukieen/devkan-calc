@@ -10,6 +10,9 @@ subprojects {
   sourceCompatibility = 1.7
   targetCompatibility = 1.7
 
+  def enc = 'UTF-8'
+  tasks.withType(AbstractCompile).each { it.options.encoding = enc }
+
   repositories {
     mavenCentral()
   }

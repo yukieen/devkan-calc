@@ -5,7 +5,6 @@ archivesBaseName = 'devkan-calc'
 httpPort = 8080
 stopPort = 9451
 stopKey = 'foo'
-jettyRun.daemon = true
 
 ext {
   JERSEY_VERSION = '1.17.1'
@@ -27,3 +26,4 @@ task integrationTest(type:Test) {
   include '**/*IT*'
   testReportDir = new File(project.testReportDir.parent, 'integration-tests')
 }
+

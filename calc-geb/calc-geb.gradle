@@ -1,5 +1,11 @@
 apply plugin: 'groovy'
 
+['chrome', 'firefox'].each { driver ->
+  task "${driver}Test"(type: Test) {
+    systemProperty 'geb.env', driver
+  }
+}
+
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:latest.release'
     testCompile 'junit:junit:latest.release'

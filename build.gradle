@@ -12,6 +12,7 @@ subprojects {
 
   def enc = 'UTF-8'
   tasks.withType(AbstractCompile).each { it.options.encoding = enc }
+  tasks.withType(GroovyCompile).each { it.groovyOptions.encoding = enc }
 
   repositories {
     mavenCentral()

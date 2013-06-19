@@ -1,9 +1,10 @@
 package services;
 
-import com.sun.jersey.test.framework.AppDescriptor;
-import com.sun.jersey.test.framework.JerseyTest;
-import com.sun.jersey.test.framework.LowLevelAppDescriptor;
+import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
+
+import javax.ws.rs.core.Application;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -12,16 +13,17 @@ public class CalculatorIT extends JerseyTest {
 
     @Test
     public void testAdd() {
-        String actual = resource().path("/calc/add")
+        String actual = target("/calc/add")
                 .queryParam("a", "1")
                 .queryParam("b", "1")
+                .request()
                 .get(String.class);
 
         assertThat(actual, is("2"));
     }
 
     @Override
-    protected AppDescriptor configure() {
-        return new LowLevelAppDescriptor.Builder(Calculator.class).build();
+    protected Application configure() {
+        return new ResourceConfig(Calculator.class);
     }
 }

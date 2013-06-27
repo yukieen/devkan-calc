@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'jetty'
+apply plugin: 'maven'
 
 repositories.mavenCentral()
   
@@ -32,3 +33,7 @@ task integrationTest(type:Test) {
 }
 
 task wrapper(type: Wrapper) { gradleVersion = '1.6' }
+
+task writePom << {
+    pom().writeTo('pom.xml')
+}

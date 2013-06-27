@@ -5,3 +5,7 @@ build/
 target/
 out/
 classes/
+.classpath
+.project
+.settings/
+bin/

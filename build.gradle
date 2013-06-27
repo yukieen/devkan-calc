@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'jetty'
-  apply plugin: 'eclipse'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 
 repositories.mavenCentral()
   
@@ -18,7 +19,6 @@ stopKey = 'foo'
 
 dependencies {
     providedCompile "javax.ws.rs:javax.ws.rs-api:2.0"
-    providedCompile "org.glassfish.jersey.containers:jersey-container-servlet:2.0"
     testCompile 'junit:junit:4.11'
     testCompile "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-simple:2.0"
 }
@@ -33,3 +33,7 @@ task integrationTest(type:Test) {
 }
 
 task wrapper(type: Wrapper) { gradleVersion = '1.6' }
+
+task writePom << {
+    pom().writeTo('pom.xml')
+}

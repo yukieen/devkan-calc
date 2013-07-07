@@ -21,9 +21,9 @@ public class CalculatorTest {
   }
   
   @Test
-  public void testAdd1plusMinus1() {
+  public void testSubstruct() {
 	    Calculator sut = new Calculator();
-	    String actual = sut.add(1, -1);
-	    assertThat(actual, is("0"));
+	    String actual = sut.substruct(3, 2);
+	    assertThat(actual, is("1"));
   }
 }

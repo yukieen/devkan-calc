@@ -7,16 +7,16 @@ import static org.hamcrest.CoreMatchers.is;
 public class CalculatorTest {
 
   @Test
-  public void testAdd() {
+  public void testAdd1plus1() {
     Calculator sut = new Calculator();
     String actual = sut.add(1, 1);
     assertThat(actual, is("2"));
   }
   
   @Test
-  public void testAddError() {
+  public void testAdd1plus2() {
 	    Calculator sut = new Calculator();
-	    String actual = sut.add(1, 1);
-	    assertThat(actual, is("0"));
+	    String actual = sut.add(1, 2);
+	    assertThat(actual, is("3"));
   }
 }

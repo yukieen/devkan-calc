@@ -12,4 +12,11 @@ public class CalculatorTest {
     String actual = sut.add(1, 1);
     assertThat(actual, is("2"));
   }
+  
+  @Test
+  public void testAddError() {
+	    Calculator sut = new Calculator();
+	    String actual = sut.add(1, 1);
+	    assertThat(actual, is("0"));
+  }
 }

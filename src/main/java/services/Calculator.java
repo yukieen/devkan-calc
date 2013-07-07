@@ -17,8 +17,8 @@ public class Calculator {
     }
     
     @GET
-    @Path("substruct")
-    public String substruct(@QueryParam("a")int a, @QueryParam("b")int b){
+    @Path("subtract")
+    public String subtract(@QueryParam("a")int a, @QueryParam("b")int b){
     	return String.valueOf(a - b);
     }
 }

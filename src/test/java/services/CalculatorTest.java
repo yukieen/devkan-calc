@@ -23,7 +23,7 @@ public class CalculatorTest {
   @Test
   public void testSubstruct() {
 	    Calculator sut = new Calculator();
-	    String actual = sut.substruct(3, 2);
+	    String actual = sut.subtract(3, 2);
 	    assertThat(actual, is("1"));
   }
 }
